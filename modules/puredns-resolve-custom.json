@@ -1,0 +1,6 @@
+[
+  {
+    "command": "/home/op/go/bin/puredns resolve input --resolvers /home/op/lists/resolvers.txt --write-massdns massdns.txt | tee output | cat massdns.txt >> output",
+    "ext": "txt"
+  }
+]
