@@ -7,6 +7,11 @@
       "destination": "/tmp/configs"
     },
     {
+      "type": "file",
+      "source": "/root/dagu-vuln-scanner",
+      "destination": "/home/dagu-vuln-scanner"
+    },
+    {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
         "echo 'Waiting for cloud-init to finish, this can take a few minutes please be patient...'",
@@ -77,6 +82,21 @@
         "echo 'Installing nmap'",
         "sudo apt-get -qy --no-install-recommends install build-essential libssl-dev flex bison",
         "/bin/su -l op -c 'wget https://nmap.org/dist/nmap-7.92.tgz -O /home/op/recon/nmap.tar.gz && cd /home/op/recon/ && tar zxf nmap.tar.gz --transform s/nmap-7.92/nmap/ && rm nmap.tar.gz && cd /home/op/recon/nmap/ && sudo ./configure --without-ndiff --without-zenmap --without-nping  --without-ncat --without-nmap-update --with-libpcap=included && sudo make && sudo make install'",
+
+        "echo 'Installing Subfinder'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest'",
+
+        "echo 'Installing puredns'",
+        "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/d3mondev/puredns/v2@latest'",
+
+        "echo 'Installing httpx'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/httpx/cmd/httpx@latest'",
+
+        "echo 'Installing katana'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/katana/cmd/katana@latest'",
+
+        "echo 'Installing dagu'",
+        "curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/installer.sh | bash",
 
         "/bin/su -l root -c 'apt-get clean'",
         "echo \"The password for user op is: {{ user `op_random_password` }}\"",
