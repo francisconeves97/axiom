@@ -1,6 +1,0 @@
-[
-  {
-    "command": "cat input | xargs -I {} sh -c 'DOMAIN={} OUTPUT=output /usr/local/bin/dagu start /home/op/dagu-vuln-scanner/dags/single-machine-full-recon.yaml'",
-    "ext": ""
-  }
-]

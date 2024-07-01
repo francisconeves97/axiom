@@ -133,7 +133,8 @@
         "sudo systemctl enable dagu-caddy.service",
         "sudo systemctl start dagu-caddy.service",
 
-        "cd /home/op/dagu-vuln-scanner; /bin/su -l op -c '/usr/local/go/bin/go mod vendor && /usr/local/go/bin/go install ./cmd/...'",
+        "/bin/su -l op -c 'cd /home/op/dagu-vuln-scanner; GO111MODULE=on /usr/local/go/bin/go mod vendor;'",
+        "/bin/su -l op -c 'cd /home/op/dagu-vuln-scanner; GO111MODULE=on /usr/local/go/bin/go install ./cmd/...'",
 
         "echo 'Removing unneeded Docker images'",
         "/bin/su -l op -c 'docker image prune -f'",
