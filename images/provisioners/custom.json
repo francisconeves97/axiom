@@ -9,7 +9,7 @@
     {
       "type": "file",
       "source": "/root/dagu-vuln-scanner",
-      "destination": "/home/op/dagu-vuln-scanner"
+      "destination": "/tmp/dagu-vuln-scanner"
     },
     {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
@@ -54,6 +54,7 @@
         "mv /tmp/configs/authorized_keys /home/op/.ssh/authorized_keys",
         "mv /tmp/configs/config.ini /home/op/.config/amass/config.ini",
         "mv /tmp/configs/tmux-splash.sh /home/op/bin/tmux-splash.sh",
+        "mv /tmp/dagu-vuln-scanner /home/op/dagu-vuln-scanner",
         "/bin/su -l op -c 'sudo chmod 600 /home/op/.ssh/authorized_keys'",
         "chown -R op:users /home/op",
         "sudo service sshd restart",
