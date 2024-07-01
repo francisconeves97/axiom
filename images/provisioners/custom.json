@@ -117,6 +117,9 @@
         "echo 'Installing waybackurls'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/waybackurls@latest'",
 
+        "echo 'Installing dagu'",
+        "curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/installer.sh | bash",
+
         "echo 'Removing unneeded Docker images'",
         "/bin/su -l op -c 'docker image prune -f'",
 
