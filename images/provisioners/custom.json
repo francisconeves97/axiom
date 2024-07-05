@@ -128,7 +128,7 @@
         "sudo apt install caddy -y -qq",
         "caddy stop > /dev/null 2>&1",
         "sudo systemctl disable caddy.service",
-        "sudo systemctl link /home/op/dagu-vuln-scanner/deploy/dagu-caddy.service",
+        "sudo systemctl link /home/op/dagu-vuln-scanner/deploy/workers/dagu-caddy.service",
         "sudo systemctl daemon-reload",
         "sudo systemctl enable dagu-caddy.service",
         "sudo systemctl start dagu-caddy.service",
