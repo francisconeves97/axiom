@@ -179,7 +179,7 @@ clean_up() {
     echo -e "${BGreen}output: ${Color_Off}[${Blue} $(realpath $outfile) ${Color_Off}]${BGreen} | ${BGreen}log: ${Color_Off}[${Blue} "$AXIOM_PATH/logs/$uid" ${Color_Off}]${BGreen} | ${BGreen}remote: ${Color_Off}[${Blue} "/home/op/scan/$uid" ${Color_Off}] ${BGreen} |"
     echo -e "${BGreen}command: ${Color_Off}[${Blue} $command ${Color_Off}]${BGreen} | ${BGreen}ext: ${Color_Off}[${Blue} "$ext" ${Color_Off}]${BGreen} | ${BGreen}threads: ${Color_Off}[${Blue} "$threads" ${Color_Off}]${BGreen}"
     rm -r $socket_tmp >/dev/null 2>&1
-    #stty sane
+    # stty sane
     tput init
     exit $1
 }
@@ -1251,5 +1251,5 @@ kill -0 $tailPID 2>  /dev/null && kill -9 $tailPID  &> /dev/null
 kill -0 $downloaderPID 2>  /dev/null && kill -9 $downloaderPID  &> /dev/null
 wait $tailPID 2>/dev/null
 wait $downloaderPID 2>/dev/null
-stty sane
+# stty sane
 tput init
