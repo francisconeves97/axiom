@@ -1,0 +1,6 @@
+[
+  {
+    "command": "cat input | xargs -I {} sh -c 'TARGET=$(echo {} | cut -d, -f1) DOMAIN=$(echo {} | cut -d, -f2) OUTPUT=output /usr/local/bin/dagu start /home/op/dagu-vuln-scanner/dags/http-probe-workflow.yaml'",
+    "ext": ""
+  }
+]
