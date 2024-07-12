@@ -1,6 +1,6 @@
 [
   {
-    "command": "cat input | katana -u https://adjust.com -s \"breadth-first\" -iqp -f url -o output/result.txt -sr -srd output/responses",
+    "command": "cat input | katana -u https://adjust.com -ct $(($(wc -l < input) * 5))m -s \"breadth-first\" -iqp -f url -o output/result.txt -sr -srd output/responses",
     "ext": "dir"
   }
 ]
