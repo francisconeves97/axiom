@@ -113,6 +113,9 @@
         "echo 'Installing subjack'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/haccer/subjack@latest'",
 
+        "echo 'Installing katana'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/katana/cmd/katana@latest'",
+
         "echo 'Installing subfinder'",
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest'",
 
@@ -121,6 +124,9 @@
 
         "echo 'Installing dagu'",
         "curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/installer.sh | bash",
+
+        "echo 'Installing xnLinkFinder'",
+        "/bin/su -l op -c 'pip install xnLinkFinder'",
 
         "curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg",
         "curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list",
