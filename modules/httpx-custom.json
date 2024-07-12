@@ -1,6 +1,6 @@
 [
   {
     "command": "awk -F',' '{print $2}' input | httpx -sc -td -hash md5 -location -rt -title -probe -o output -json -ports=\"http:80,8080,https:443,8443\" -store-response -store-response-dir responses -follow-redirects",
-    "ext": "txt"
+    "ext": "dir"
   }
 ]
