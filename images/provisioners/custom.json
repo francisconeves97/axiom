@@ -110,6 +110,9 @@
         "echo 'Installing qsreplace'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/qsreplace@latest'",
 
+        "echo 'Install unfurl'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/francisconeves97/unfurl@latest'",
+
         "echo 'Installing subjack'",
         "/bin/su -l op -c '/usr/local/go/bin/go install github.com/haccer/subjack@latest'",
 
