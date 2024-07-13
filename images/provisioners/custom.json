@@ -120,7 +120,7 @@
         "/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest'",
 
         "echo 'Installing waybackurls'",
-        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/waybackurls@latest'",
+        "/bin/su -l op -c '/usr/local/go/bin/go install github.com/francisconeves97/waybackurls-v2@latest'",
 
         "echo 'Installing dagu'",
         "curl -L https://raw.githubusercontent.com/yohamta/dagu/main/scripts/installer.sh | bash",
