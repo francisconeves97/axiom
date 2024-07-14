@@ -1,6 +1,6 @@
 [
   {
-    "command": "cat input | unfurl format %d | VT_API_KEY=$(grep VT_API_KEY /home/op/dagu-vuln-scanner/tool-configs/.env | cut -d'=' -f2) waybackurls-v2 --no-subs | tee output",
+    "command": "cat input | unfurl format %d | VT_API_KEY=$(grep VT_API_KEY /home/op/dagu-vuln-scanner/tool-configs/.env | cut -d'=' -f2) /home/op/go/bin/waybackurls-v2 --no-subs | tee output",
     "ext": "txt"
   }
 ]
