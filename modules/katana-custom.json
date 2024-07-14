@@ -1,6 +1,6 @@
 [
   {
-    "command": "cat input | xargs -I PLACEHOLDER sh -c 'DIR=\"/tmp/$(date +%s)\"; mkdir -p ${DIR}; /home/op/go/bin/katana -u PLACEHOLDER -ct 1m -s \"breadth-first\" -iqp -f url -o ${DIR}/result.txt -sr -srd ${DIR}/responses; cat ${DIR}/result.txt | anew output/result.txt; find ${DIR}/responses -type f -exec mv {} output/ \\;'",
+    "command": "cat input | xargs -I PLACEHOLDER sh -c 'DIR=\"/tmp/$(date +%s)\"; mkdir -p ${DIR}; /home/op/go/bin/katana -u PLACEHOLDER -ct 1m -s \"breadth-first\" -iqp -f url -o ${DIR}/result.txt -sr -srd ${DIR}/responses -fs fqdn; cat ${DIR}/result.txt | anew output/result.txt; find ${DIR}/responses -type f -exec mv {} output/ \\;'",
     "ext": "dir"
   }
 ]
