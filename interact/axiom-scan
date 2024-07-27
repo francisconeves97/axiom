@@ -349,7 +349,8 @@ merge_output() {
         mkdir $tmp/merge
         find $tmp/output -type f \( $(echo $files_to_merge | sed 's/,/ -o -name /g; s/^/-name /') \) -print0 | xargs -0 -I{} cp --backup=t {} $tmp/merge
         output_lines=$(ls $tmp/merge | wc -l)
-        find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} sh -c 'rsync --recursive {} $0/$(basename {})/;' $tmp/merge
+        mkdir $tmp/merge/$directories_merge_destination
+        find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} rsync --recursive {} $tmp/merge/$directories_merge_destination
         if [ -f "$outfile" ] ; then
          rm -rf "$outfile"
         fi
@@ -386,6 +387,7 @@ wordlist=""
 module=""
 ext="default"
 files_to_merge=""
+directories_merge_destination=""
 local_wordlist="false"
 user_specified_wordlist="false"
 cache="false"
@@ -883,6 +885,13 @@ fi
 #
 if [[ "$files_to_merge" == "" ]]; then
     files_to_merge="$(parse_module "$module" | jq -r '.files_to_merge')"
+fi
+
+###########################################################################################################
+#  Parse the directories merge destination
+#
+if [[ "$directories_merge_destination" == "" ]]; then
+    directories_merge_destination="$(parse_module "$module" | jq -r '.directories_merge_destination')"
 fi
 
 ###########################################################################################################
