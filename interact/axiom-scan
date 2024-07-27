@@ -349,7 +349,7 @@ merge_output() {
         mkdir $tmp/merge
         find $tmp/output -type f \( $(echo $files_to_merge | sed 's/,/ -o -name /g; s/^/-name /') \) -print0 | xargs -0 -I{} cp --backup=t {} $tmp/merge
         output_lines=$(ls $tmp/merge | wc -l)
-        find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} rsync --recursive {} $tmp/merge/
+        find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} sh -c 'rsync --recursive {} $0/$(basename {})/;' $tmp/merge
         if [ -f "$outfile" ] ; then
          rm -rf "$outfile"
         fi
