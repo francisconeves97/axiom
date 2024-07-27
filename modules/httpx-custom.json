@@ -1,6 +1,7 @@
 [
   {
     "command": "awk -F',' '{print $2}' input | /home/op/go/bin/httpx -sc -td -hash md5 -location -rt -title -probe -o output/result.txt -json -ports=\"http:80,8080,https:443,8443\" -store-response -store-response-dir output/responses -follow-redirects",
-    "ext": "dir"
+    "ext": "original-dir",
+    "files_to_merge": "result.txt"
   }
 ]
