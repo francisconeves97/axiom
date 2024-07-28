@@ -351,7 +351,7 @@ merge_output() {
         find $tmp/output -type f \( $(echo $files_to_merge | sed 's/,/ -o -name /g; s/^/-name /') \) -print0 | xargs -0 -I{} cp --backup=t {} $tmp/merge
         output_lines=$(ls $tmp/merge | wc -l)
         mkdir $tmp/merge/$directories_merge_destination
-        find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} rsync --recursive {}/ $tmp/merge/$directories_merge_destination/
+        find $tmp/output/*/output/$directories_merge_destination -maxdepth 0 -type d -print0 | xargs -0 -I {} rsync --recursive {}/ $tmp/merge/$directories_merge_destination/
         if [ -f "$outfile" ] ; then
          rm -rf "$outfile"
         fi
