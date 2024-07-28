@@ -13,7 +13,7 @@
     },
     {
       "type": "file",
-      "source": "/root/dagu-vuln-scanner/tools-config/subfinder-config.yaml",
+      "source": "/root/dagu-vuln-scanner/tool-configs/subfinder-config.yaml",
       "destination": "/tmp/subfinder-config.yaml"
     },
     {
