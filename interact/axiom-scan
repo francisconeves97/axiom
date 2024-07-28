@@ -352,10 +352,10 @@ merge_output() {
         output_lines=$(ls $tmp/merge | wc -l)
         mkdir $tmp/merge/$directories_merge_destination
         find $tmp/output/*/output/ -type d -mindepth 1 -print0 | xargs -0 -I {} rsync --recursive {}/ $tmp/merge/$directories_merge_destination/
-        # if [ -f "$outfile" ] ; then
-        #  rm -rf "$outfile"
-        # fi
-        # mv $tmp/merge "$outfile"
+        if [ -f "$outfile" ] ; then
+         rm -rf "$outfile"
+        fi
+        mv $tmp/merge "$outfile"
     elif [[ "$ext" == "" ]] || [[ "$ext" == "dir" ]];  then
         echo "Mode set to directory... Merging directories..."
         mkdir $tmp/merge
