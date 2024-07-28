@@ -346,6 +346,7 @@ merge_output() {
         output_lines=$(ls $outfile | wc -l)
     elif [[ "$ext" == "original-dir" ]]; then
         echo "Mode set to original directory... Merging directories..."
+        echo "dir: $tmp"
         mkdir $tmp/merge
         find $tmp/output -type f \( $(echo $files_to_merge | sed 's/,/ -o -name /g; s/^/-name /') \) -print0 | xargs -0 -I{} cp --backup=t {} $tmp/merge
         output_lines=$(ls $tmp/merge | wc -l)
