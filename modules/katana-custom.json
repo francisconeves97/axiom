@@ -1,6 +1,8 @@
 [
   {
     "command": "cat input | xargs -I PLACEHOLDER sh -c 'DIR=\"/tmp/$(date +%s)\"; mkdir -p ${DIR}; /home/op/go/bin/katana -u PLACEHOLDER -ct 1m -s \"breadth-first\" -iqp -f url -o ${DIR}/result.txt -sr -srd ${DIR}/responses -fs fqdn; cat ${DIR}/result.txt | anew output/result.txt; find ${DIR}/responses -type f -exec mv {} output/ \\;'",
-    "ext": "dir"
+    "ext": "original-dir",
+    "files_to_merge": "result.txt",
+    "directories_merge_destination": "responses"
   }
 ]
