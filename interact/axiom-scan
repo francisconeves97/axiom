@@ -356,6 +356,7 @@ merge_output() {
          rm -rf "$outfile"
         fi
         mv $tmp/merge "$outfile"
+        echo "output: $outfile"
     elif [[ "$ext" == "" ]] || [[ "$ext" == "dir" ]];  then
         echo "Mode set to directory... Merging directories..."
         mkdir $tmp/merge
