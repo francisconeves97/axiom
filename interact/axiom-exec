@@ -471,4 +471,4 @@ kill -0 $downloaderPID 2>  /dev/null && kill -9 $downloaderPID  &> /dev/null
 wait $tailPID 2>/dev/null
 wait $downloaderPID 2>/dev/null
 stty sane
-tput init
+# tput init
