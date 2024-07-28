@@ -946,7 +946,7 @@ fi
 #
 echo -e "${BGreen}creating scan working directory at ${Color_Off}${Blue}: /home/op/scan/$uid/${Color_Off}"
 rawcommand="$(parse_module "$module" "$ext" | jq -r '.command')"
-if ([[ "$rawcommand" =~ "_target_" ]] || [[ "$rawcommand" =~  "_safe-target_" ]] || [[ "$ext" ==  "" ]] || [[ "$ext" == "dir" ]]) && [[ "$disable_oneshot" != "true" ]]; then
+if ([[ "$rawcommand" =~ "_target_" ]] || [[ "$rawcommand" =~  "_safe-target_" ]] || [[ "$ext" ==  "" ]] || [[ "$ext" == "dir" ]] || [[ "$ext" == "original-dir" ]]) && [[ "$disable_oneshot" != "true" ]]; then
     $interlace_cmd_nobar -c "$ssh_command _target_ 'mkdir -p $scan_dir/output'" >/dev/null 2>&1
 else
 
