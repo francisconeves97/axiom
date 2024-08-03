@@ -1,6 +1,6 @@
 [
   {
-    "command": "cat input | xargs -I PLACEHOLDER sh -c 'DIR=\"/tmp/$(date +%s)\"; mkdir -p ${DIR}; /home/op/go/bin/katana -u PLACEHOLDER -ct 15s -s \"breadth-first\" -iqp -f url -o ${DIR}/result.txt -sr -srd ${DIR}/responses -fs fqdn; cat ${DIR}/result.txt | anew output/result.txt; mkdir -p output/responses; rsync --recursive ${DIR}/responses/ output/responses'",
+    "command": "cat input | xargs -I PLACEHOLDER sh -c 'DIR=\"/home/op/katana/$(date +%s)\"; mkdir -p ${DIR}; /home/op/go/bin/katana -u PLACEHOLDER -ct 15s -s \"breadth-first\" -iqp -f url -o ${DIR}/result.txt -sr -srd ${DIR}/responses -fs fqdn; cat ${DIR}/result.txt | anew output/result.txt; mkdir -p output/responses; rsync --recursive ${DIR}/responses/ output/responses'",
     "ext": "original-dir",
     "files_to_merge": "result.txt",
     "directories_merge_destination": "responses"
