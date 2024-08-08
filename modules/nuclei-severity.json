@@ -1,6 +1,6 @@
 [
   {
-    "command": "/home/op/go/bin/nuclei -update -silent ; cat input | /home/op/go/bin/nuclei -t /home/op/nuclei-templates -severity medium,high,critical -max-host-error 3 -o output",
+    "command": "/home/op/go/bin/nuclei -update -ut -silent ; /home/op/go/bin/nuclei -l input -t /home/op/nuclei-templates -severity medium,high,critical -max-host-error 3 -o output",
     "ext": "txt"
   }
 ]
