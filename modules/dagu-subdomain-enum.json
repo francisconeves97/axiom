@@ -1,6 +1,6 @@
 [
   {
-    "command": "cat input | xargs -I {} sh -c 'TARGET=$(echo {} | cut -d, -f1) DOMAIN=$(echo {} | cut -d, -f2) OUTPUT=output /usr/local/bin/dagu start /home/op/dagu-vuln-scanner/dags/subdomain-discovery-workflow.yaml'",
+    "command": "cat input | xargs -I {} sh -c 'TARGET=$(echo {} | cut -d, -f1) DOMAIN=$(echo {} | cut -d, -f2) OUTPUT=output /home/op/dagu-vuln-scanner/scripts/subdomain-discovery-workflow.sh'",
     "ext": ""
   }
 ]
